@@ -3,6 +3,8 @@ import {check} from 'express-validator';
 
 const api:Router = express.Router()
 
+const mongoose = require("mongoose");
+
 interface User {
     name: string;
     email: string;
@@ -11,6 +13,28 @@ interface User {
 //This is not a restapi as it mantains state but it is here for
 //simplicity. A database should be used instead.
 let users: Array<User> = [];
+
+const productoSchema = new mongoose.Schema({
+  id: Number,
+  nombre: String,
+  precio: Number,
+  peso: Number,
+  descripcion: String
+})
+const Producto = mongoose.model("productos", productoSchema);
+
+const pedidoSchema = new mongoose.Schema({
+  webid: String,
+  idProducto: Number,
+  nombreProducto: String,
+  cantidad: Number,
+  precio: Number,
+  almacen: String,
+  envio: Number,
+  estado: String
+})
+
+const Pedido = mongoose.model("pedidos", pedidoSchema);
 
 api.get(
     "/users/list",
@@ -32,5 +56,25 @@ api.post(
     return res.sendStatus(200);
   }
 );
+
+api.get("/productos",
+  async (req: Request, res: Response): Promise<Response> => { 
+    const productos = await Producto.find()
+    return res.status(200).send(productos);
+  }
+);
+
+api.get("/productos/:id",
+  async (req: Request, res: Response): Promise<Response> => { 
+    let productos;
+    try {
+    productos = await Producto.findOne({id:req.params.id})
+    } catch {
+
+    }
+    return res.status(200).send(productos);
+  }
+);
+
 
 export default api;
