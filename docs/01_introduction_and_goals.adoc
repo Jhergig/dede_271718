@@ -3,73 +3,49 @@
 
 [role="arc42help"]
 ****
-Describes the relevant requirements and the driving forces that software architects and development team must consider. These include
-
-* underlying business goals, essential features and functional requirements for the system
-* quality goals for the architecture
-* relevant stakeholders and their expectations
+DeDe es un sistema de compra online cuya principal característica es la descentralización de los datos de sus clientes siguiendo los principios SOLID.
 ****
 
 === Requirements Overview
 
 [role="arc42help"]
 ****
-.Contents
-Short description of the functional requirements, driving forces, extract (or abstract)
-of requirements. Link to (hopefully existing) requirements documents
-(with version number and information where to find it).
+Los principales requisitos funcionales del sistema son:
 
-.Motivation
-From the point of view of the end users a system is created or modified to
-improve support of a business activity and/or improve the quality.
-
-.Form
-Short textual description, probably in tabular use-case format.
-If requirements documents exist this overview should refer to these documents.
-
-Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
+* Un usuario puede iniciar sesión a través de un proveedor de PODs. Es en estos pods donde DeDe consultará los datos del usuario, sin almacenarlos en el sistema, respetando así su privacidad.
+* Un catálogo con los productos a la venta, visible para todos los usuarios y con la posibilidad de realizar una búsqueda. Cada producto muestra su nombre, precio y la opción para ver más detalles, comprarlo o añadirlo a la cesta. 
+* Un usuario que haya iniciado sesión puede proceder a la compra de un producto o añadirlo a su cesta, visualizar los productos de su cesta, seleccionar productos de su cesta para proceder a su compra y visualizar sus pedidos realizados.
+* Un usuario que haya iniciado sesión puede gestionar sus direcciones (almacenadas en su pod), pudiendo añadir y editarlas desde la propia aplicación.
+* En el proceso de compra, el usuario seleccionará una dirección de envío de su pod, podrá opcionalmente especificar un rango horario para realizar la entrega (con un coste adicional), y verá el coste del pedido, con el precio del producto o productos y los gastos de envío, que se calculan en función de la distancia entre la dirección y almacén seleccionados.
+** En el caso de la compra de un producto, se puede seleccionar el almacén desde el que será enviado y la cantidad.
+** En el caso de la compra de un conjunto de productos de la cesta, se visualizará la lista de productos con su cantidad y almacén seleccionados, junto a una opción para editar estos de una manera similar a cuando se realiza la compra de un producto por separado.
 ****
 
 === Quality Goals
 
 [role="arc42help"]
 ****
-.Contents
-The top three (max five) quality goals for the architecture whose fulfillment is of highest importance to the major stakeholders. We really mean quality goals for the architecture. Don't confuse them with project goals. They are not necessarily identical.
-
-.Motivation
-You should know the quality goals of your most important stakeholders, since they will influence fundamental architectural decisions. Make sure to be very concrete about these qualities, avoid buzzwords.
-If you as an architect do not know how the quality of your work will be judged …
-
-.Form
-A table with quality goals and concrete scenarios, ordered by priorities
+[options="header",cols="1,2,2"]
+|===
+|N.|Atributo de calidad|Objetivo, motivaciones
+| 1 | Privacidad | El sistema no almacenará información personal de los clientes, respetando su privacidad siguiendo los principios SOLID.
+| 2 | Usabilidad | Todo tipo de usuario debería ser capaz de utilizar la aplicación de forma intuitiva, sin ningún conocimiento o experiencia previa en esta. 
+| 3 | Rendimiento | El sistema debe responder de forma eficaz y rápida, creando la ilusión de que no se trata de una aplicación web sino una de escritorio.
+| 4 | Elegancia | Se debe cuidar la estética visual de la aplicación.
+| 5 | Seguridad | La aplicación debe ser robusta y almacenar los datos de manera segura.
+| 6 | Mantenibilidad | Esencial que el se construya desde un principio de una manera  mantenible que permita realizar cambios y añadir nuevas funcionalidades en un futuro.
+|===
 ****
 
 === Stakeholders
 
 [role="arc42help"]
 ****
-.Contents
-Explicit overview of stakeholders of the system, i.e. all person, roles or organizations that
-
-* should know the architecture
-* have to be convinced of the architecture
-* have to work with the architecture or with code
-* need the documentation of the architecture for their work
-* have to come up with decisions about the system or its development
-
-.Motivation
-You should know all parties involved in development of the system or affected by the system.
-Otherwise, you may get nasty surprises later in the development process.
-These stakeholders determine the extent and the level of detail of your work and its results.
-
-.Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
+[options="header",cols="1,2"]
+|===
+|Stakeholder|Expectativas, motivaciones
+| Equipo de desarrollo | El equipo encargado de construir la aplicación y aplicar la arquitectura diseñada.
+| Profesores | Son los encargados de evaluar el proyecto y el sistema final. También actúan como el supuesto cliente (empresa de venta de productos).
+| Usuario | Los usuarios finales, los que usarán la aplicación para realizar compras.
+|===
 ****
-
-[options="header",cols="1,2,2"]
-|===
-|Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
-|===

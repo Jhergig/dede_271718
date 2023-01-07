@@ -1,31 +1,13 @@
 [[section-glossary]]
 == Glossary
 
-
-
-[role="arc42help"]
-****
-.Contents
-The most important domain and technical terms that your stakeholders use when discussing the system.
-
-You can also see the glossary as source for translations if you work in multi-language teams.
-
-.Motivation
-You should clearly define your terms, so that all stakeholders
-
-* have an identical understanding of these terms
-* do not use synonyms and homonyms
-
-.Form
-A table with columns <Term> and <Definition>.
-
-Potentially more columns in case you need translations.
-
-****
-
 [options="header"]
 |===
-| Term         | Definition
-| <Term-1>     | <definition-1>
-| <Term-2>     | <definition-2>
+| Término | Definición
+| TypeScript | Lenguaje de programación libre y de código abierto, siendo un superconjunto de JavaScript que añade tipado y objetos basados en clases, desarrollado por Microsoft
+| React | Biblioteca Javascript de código abierto diseñada para crear interfaces, desarrollado por Facebook
+| Solid | Especificación que permite a los usuarios almacenar sus datos de forma segura en Pods
+| Pods | Servidores web de datos personales, seguros y descentralizados. El usuario del Pod controla que personas y aplicaciones pueden acceder a sus datos
+| MongoDB | Sistema de base de datos NoSQL, orientado a documentos y de código abierto
+| Docker | Proyecto de código abierto, automatiza el despliegue de aplicaciones dentro de contenedores software, una capa de virtualización de aplicaciones directamente sobre el sistema operativo
 |===

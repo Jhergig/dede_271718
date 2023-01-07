@@ -1,0 +1,29 @@
+== Testing
+
+=== Pruebas unitarias
+
+[role="arc42help"]
+****
+Pruebas unitarias
+****
+
+=== Pruebas de aceptación
+
+[role="arc42help"]
+****
+Pruebas de aceptación
+****
+
+=== Cobertura de código
+
+[role="arc42help"]
+****
+Cobertura de código
+****
+
+=== Pruebas de carga
+
+[role="arc42help"]
+****
+Pruebas de carga
+****
