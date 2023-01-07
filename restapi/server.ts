@@ -7,6 +7,8 @@ import api from "./api";
 const app: Application = express();
 const port: number = 5000;
 
+const mongoose = require('mongoose');
+
 const options: cors.CorsOptions = {
   origin: ['http://localhost:3000']
 };
@@ -25,3 +27,4 @@ app.listen(port, ():void => {
     console.error('Error occured: ' + error.message);
 });
 
+mongoose.connect('mongodb://admin:asw@ac-ndy3exa-shard-00-00.jzhk3ah.mongodb.net:27017,ac-ndy3exa-shard-00-01.jzhk3ah.mongodb.net:27017,ac-ndy3exa-shard-00-02.jzhk3ah.mongodb.net:27017/?ssl=true&replicaSet=atlas-mab3rk-shard-0&authSource=admin&retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }, async () => { console.log('conectado') }); 
