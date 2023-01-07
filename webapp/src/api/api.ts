@@ -19,3 +19,9 @@ export async function getUsers():Promise<User[]>{
     //The objects returned by the api are directly convertible to User objects
     return response.json()
 }
+
+export async function getProductos(): Promise<any[]> {
+  const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
+  let response = await fetch(apiEndPoint + '/productos');
+  return response.json()
+}

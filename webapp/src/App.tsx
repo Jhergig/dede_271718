@@ -1,35 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
-import Container from '@mui/material/Container';
-import EmailForm from './components/EmailForm';
-import Welcome from './components/Welcome';
-import UserList from './components/UserList';
-import  {getUsers} from './api/api';
-import {User} from './shared/shareddtypes';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import Catalogo from './components/Catalogo';
+import Footer from './components/Footer';
+import Login from './components/Login';
+import Logout from './components/Logout';
 import './App.css';
 
 function App(): JSX.Element {
 
-  const [users,setUsers] = useState<User[]>([]);
-
-  const refreshUserList = async () => {
-    setUsers(await getUsers());
-  }
-
-  useEffect(()=>{
-    refreshUserList();
-  },[]);
+  const [nombre, setNombre] = useState('');
 
   return (
     <>
-      <Container maxWidth="sm">
-        <Welcome message="ASW students"/>
-        <Box component="div" sx={{ py: 2}}>This is a basic example of a React application using Typescript. You can add your email to the list filling the form below.</Box>
-        <EmailForm OnUserListChange={refreshUserList}/>        
-        <UserList users={users}/>
-        <Link href="https://github.com/pglez82/asw2122_0">Source code</Link>
-      </Container>
+      <Header nombre={nombre}/>
+      <Routes>
+        <Route path="/" element={<Catalogo />} />
+        <Route path='/login' element={<Login nombre={setNombre}/>} />
+        <Route path='/logout' element={<Logout nombre={setNombre} />} />
+      </Routes>
+      <Footer/>
     </>
   );
 }

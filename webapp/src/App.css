@@ -2,21 +2,15 @@
   text-align: center;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header,
+footer {
+  width: 100%;
+  background-color: #e28800;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: xx-large;
   color: white;
 }
 
@@ -24,11 +18,65 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav {
+  flex-direction: column;
+  background-color: #e7a541;
+  display: flex;
+  justify-content: left;
+  flex-basis: 100%;
+  font-size: medium;
+  width: 100%;
+}
+
+@media only screen and (min-width: 600px) {
+  nav {
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav a:last-child {
+    margin-left: auto;
   }
+}
+
+/* 0 0 2 */
+nav a {
+  color: white;
+  padding: 1em 2em;
+  font-weight: bold;
+  vertical-align: bottom;
+  text-align: center;
+  margin: 1px;
+}
+
+nav a:hover {
+  background-color: #b36d04;
+  outline: 2px solid white;
+}
+
+main {
+  max-width: 70em;
+  margin: 0, auto;
+  flex-grow: 1;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid {
+  display: flex;
+  margin: 3em;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+a[href^='/producto/']{
+  color: black;
+}
+
+a {
+  text-decoration: none;
 }
