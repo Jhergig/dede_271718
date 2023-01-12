@@ -9,4 +9,6 @@ A short summary and explanation of the fundamental decisions and solution strate
 * Se ha decidido elaborar la documentación en español. El motivo principal es agilizar su elaboración y así poder emplear recursos en otros apartados del proyecto. Es un aspecto que puede ser (y será) cambiado fácilmente.
 * El proyecto parte de la plantilla dede_0.
 * La base de datos será MongoDB. Se trata de una base de datos NoSQL orientada a documentos popular para equipos de desarrollo en metodologías ágiles. Algunas de sus ventajas son su rendimiento y consultas bastante avanzadas para ser una base de datos NoSQL, permitir una escabilidad vertical y horizontal acorde a la demanda de la aplicación y que el equipo de desarrollo tiene algo de experiencia con esta tecnología.
+* En un principio se pensó en obtener las direcciones del usuario en el login y almacenarlas en memoria para acceder a ellas cuando fueran necesarias. Sin embargo, como las direcciones dependen de un sistema externo, debemos obtenerlas de este siempre que las necesitemos. Si no, no se verían reflejados en la sesión del usuario cambios realizados fuera de la aplicación.
+* No se consultarán APIs externas de portadores. Las que se han investigado requerían contactar con la plataforma como posibles clientes (y no los vamos a molestar para hacer esta demo). 
 ****

@@ -1,7 +1,7 @@
 [[section-glossary]]
 == Glossary
 
-[options="header"]
+[options="header", cols="1,2"]
 |===
 | Término | Definición
 | TypeScript | Lenguaje de programación libre y de código abierto, siendo un superconjunto de JavaScript que añade tipado y objetos basados en clases, desarrollado por Microsoft

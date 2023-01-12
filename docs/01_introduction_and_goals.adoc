@@ -31,9 +31,10 @@ Los principales requisitos funcionales del sistema son:
 | 1 | Privacidad | El sistema no almacenará información personal de los clientes, respetando su privacidad siguiendo los principios SOLID.
 | 2 | Usabilidad | Todo tipo de usuario debería ser capaz de utilizar la aplicación de forma intuitiva, sin ningún conocimiento o experiencia previa en esta. 
 | 3 | Rendimiento | El sistema debe responder de forma eficaz y rápida, creando la ilusión de que no se trata de una aplicación web sino una de escritorio.
-| 4 | Elegancia | Se debe cuidar la estética visual de la aplicación.
-| 5 | Seguridad | La aplicación debe ser robusta y almacenar los datos de manera segura.
-| 6 | Mantenibilidad | Esencial que el se construya desde un principio de una manera  mantenible que permita realizar cambios y añadir nuevas funcionalidades en un futuro.
+| 4 | Adaptabilidad | Es importante que la aplicación se visualice correctamente y de forma satisfactoria en dispositivos móviles.
+| 5 | Elegancia | Se debe cuidar la estética visual de la aplicación.
+| 6 | Seguridad | La aplicación debe ser robusta y almacenar los datos de manera segura.
+| 7 | Mantenibilidad | Esencial que el se construya desde un principio de una manera  mantenible que permita realizar cambios y añadir nuevas funcionalidades en un futuro.
 |===
 ****
 

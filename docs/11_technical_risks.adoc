@@ -1,10 +1,16 @@
 [[section-technical-risks]]
 == Risks and Technical Debts
 
-
+=== Risks
 [role="arc42help"]
 ****
 * Muchas de las tecnologías empleadas en el proyecto son nuevas para el equipo de desarrollo. 
 * Ninguno de los integrantes del equipo de desarrollo es experto en desarrollar interfaces visualmente bonitas.
 * Existe una fecha límite para el proyecto.
+****
+=== Technical Debts
+****
+* Falta implementar una paginación para el catálogo de productos y la vista de pedidos.
+* La restapi no cuenta con elementos de seguridad actualmente (autentificación y autorización).
+* Al recargar la página no se mantiene iniciada la sesión.
 ****
