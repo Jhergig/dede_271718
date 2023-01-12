@@ -12,7 +12,7 @@ function Header(props : any): JSX.Element {
             ? (
               <nav>
                 <Link to="/">Catálogo</Link>
-                <Link to="/carrito">Cesta</Link>
+                <Link to="/cesta">Cesta</Link>
                 <Link to="/pedidos">Mis pedidos</Link>
                 <Link to="/direcciones">Mis direcciones</Link>
                 <Link to="/logout">{props.nombre}: Cerrar sesión</Link>

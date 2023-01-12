@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { redirect } from "react-router-dom"
 import { Box, Button, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import { login, handleIncomingRedirect, getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import {
@@ -36,9 +35,9 @@ function Login(props: any): JSX.Element {
     }
 
     const getProfile = async (webId: string) => {
-        let profileDocumentURI = webId.split("#")[0]; // we remove the right hand side of the # for consistency
-        let myDataset = await getSolidDataset(profileDocumentURI); // obtain the dataset from the URI
-        return getThing(myDataset, webId) as Thing; // we obtain the thing we are looking for from the dataset
+        let profileDocumentURI = webId.split("#")[0]; 
+        let myDataset = await getSolidDataset(profileDocumentURI); 
+        return getThing(myDataset, webId) as Thing; 
     }
 
     return (

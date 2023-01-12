@@ -10,3 +10,10 @@ export type User = {
     peso: number;
     descripcion: string;
   }
+
+  export type Direccion = {
+    calle: string;
+    ciudad: string;
+    region: string;
+    cp: string;
+  }
