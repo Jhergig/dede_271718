@@ -36,6 +36,7 @@ export async function getPedidos(id: any): Promise<any[]> {
   const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
   console.log(id.toString().substring(8).split('.')[0])
   let response = await fetch(apiEndPoint + '/pedidos/' + id.toString().substring(8).split('.')[0] + id.toString().substring(8).split('.')[1]);
+  console.log(response)
   return response.json()
 }
 

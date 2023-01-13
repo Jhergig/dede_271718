@@ -24,3 +24,15 @@ export type Almacen = {
   cantidad: number;
   zona: string;
 }
+
+export type Pedido = {
+  _id: string;
+  webid: string;
+  idProducto: number;
+  nombreProducto: string,
+  cantidad: number,
+  precio: number,
+  almacen: string,
+  envio: number, 
+  estado: string 
+}
