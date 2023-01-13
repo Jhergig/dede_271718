@@ -89,7 +89,7 @@ api.get("/almacenes/:id",
   async (req: Request, res: Response): Promise<Response> => { 
     let productos;
     try {
-    productos = await Almacen.find({idProducto:req.params.id})
+    productos = await Almacen.find({idProducto:req.params.id, cantidad:{ $gte: 1}}) 
     } catch {
  
     }

@@ -9,7 +9,7 @@ type ProductoProps = {
 function ProductoCard(props: ProductoProps): JSX.Element {
 
   return (
-    <Box sx={{ border: 'solid 2px #f0c482', padding: '1em', margin: '1em', borderRadius: '1em', display:'flex', flexDirection:'column'}}>
+    <Box sx={{ border: 'solid 2px #e28800', padding: '1em', margin: '1em', borderRadius: '1em', display:'flex', flexDirection:'column'}}>
       <Link to={"/producto/" + props.producto.id}>
         <img src={"/productos/"+ props.producto.id+".png"} alt='Imagen del producto' width='235px'></img></Link>
       <Typography mt='auto'><Link to={"/producto/" + props.producto.id}>{props.producto.nombre}</Link></Typography>
@@ -17,11 +17,11 @@ function ProductoCard(props: ProductoProps): JSX.Element {
       <Box>
       <Button sx={{
         bgcolor: '#fff',
-        color: '#e7a541'
+        color: '#e28800'
       }}>Añadir a la cesta</Button>
       <Link to={'/comprar/' + props.producto.id}>
       <Button  sx={{
-        bgcolor: '#e7a541',
+        bgcolor: '#e28800',
         color: '#fff',
         textDecoration: 'none'
       }}>Comprar</Button></Link></Box>

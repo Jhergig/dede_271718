@@ -1,19 +1,26 @@
 export type User = {
-    name:string;
-    email:string;
-  }
+  name: string;
+  email: string;
+}
 
-  export type Producto = {
-    id: number;
-    nombre: string;
-    precio: number;
-    peso: number;
-    descripcion: string;
-  }
+export type Producto = {
+  id: number;
+  nombre: string;
+  precio: number;
+  peso: number;
+  descripcion: string;
+}
 
-  export type Direccion = {
-    calle: string;
-    ciudad: string;
-    region: string;
-    cp: string;
-  }
+export type Direccion = {
+  calle: string;
+  ciudad: string;
+  region: string;
+  cp: string;
+}
+
+export type Almacen = {
+  idProducto: number;
+  almacen: string;
+  cantidad: number;
+  zona: string;
+}

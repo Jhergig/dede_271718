@@ -9,6 +9,8 @@ import Direcciones from './components/Direcciones';
 import Cesta from './components/Cesta';
 import Pedidos from './components/Pedidos';
 import './App.css';
+import DetalleProducto from './components/DetalleProducto';
+import Compra from './components/Compra';
 
 function App(): JSX.Element {
 
@@ -22,6 +24,8 @@ function App(): JSX.Element {
         <Route path='/login' element={<Login nombre={setNombre}/>} />
         <Route path='/logout' element={<Logout nombre={setNombre} />} />
         <Route path='/direcciones' element={<Direcciones />} />
+        <Route path="/producto/:id" element={<DetalleProducto />} />
+        <Route path="/comprar/:id" element={<Compra/>} />
         <Route path='/cesta' element={<Cesta />} />
         <Route path='/pedidos' element={<Pedidos />} />
       </Routes>
