@@ -3,7 +3,6 @@ import { Pedido } from '../shared/shareddtypes';
 import { Box, Button } from '@mui/material';
 import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPedidos } from '../api/api';
-import { width } from '@mui/system';
 import { Link } from 'react-router-dom';
 
 function Pedidos(): JSX.Element {
@@ -21,7 +20,7 @@ function Pedidos(): JSX.Element {
 
   useEffect(() => {
     inicializarPedidos();
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <main>
       <h2>Mis pedidos</h2>
@@ -30,7 +29,7 @@ function Pedidos(): JSX.Element {
           <Box sx={{ border: 'solid 2px #e28800', padding: '1em', margin: '1em', borderRadius: '1em', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between'}}>
             <Box sx={{ padding: '0.5em'}}>
               <h3>{p.nombreProducto}</h3>
-              <img src={'/productos/' + p.idProducto + '.png'} width='200px' />
+              <img src={'/productos/' + p.idProducto + '.png'} alt={p.nombreProducto} width='200px' />
             </Box>
             <Box sx={{ padding: '0.5em', display:'flex', flexDirection:'column', justifyContent:'space-between'}}>
               <h4>{p.estado}</h4>
