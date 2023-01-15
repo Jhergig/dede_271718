@@ -49,7 +49,7 @@ function Pedidos(): JSX.Element {
             <Box sx={{ padding: '0.5em', display:'flex', flexDirection:'column', justifyContent:'center'}}>
               <p>Enviado desde: {p.almacen}</p>
               <p>Cantidad: {p.cantidad}</p>
-              <p>Total: {p.precio}€</p></Box>
+              <p>Total: {p.precio + p.envio}€</p></Box>
           </Box>
         ))}
       </Box>

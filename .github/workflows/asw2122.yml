@@ -1,6 +1,8 @@
 name: CI for ASW2122
 
 on:
+  push:
+    branches: [ master ]
   release:
     types: [published]
 

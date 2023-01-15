@@ -53,13 +53,13 @@ function Compra(): JSX.Element {
   const cambiarFinalHorario = (e: any) => {
     let hours = Number(e.target.value.split(':')[0]);
     if (hours < 12){
-      setInicioHorario("12:00");
+      setFinalHorario("12:00");
       e.target.value = "12:00";
     } else if (hours > 21) {
-      setInicioHorario("22:00");
+      setFinalHorario("22:00");
       e.target.value = "22:00";
     } else {
-      setInicioHorario(e.target.value);
+      setFinalHorario(e.target.value);
     } 
     if (hours <= Number(inicioHorario.split(':')[0])){
       e.target.helperText="Se requiere 1 hora de margen";
