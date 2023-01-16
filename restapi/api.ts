@@ -5,15 +5,6 @@ const api:Router = express.Router()
 
 const mongoose = require("mongoose");
 
-interface User {
-    name: string;
-    email: string;
-}
-
-//This is not a restapi as it mantains state but it is here for
-//simplicity. A database should be used instead.
-let users: Array<User> = [];
-
 const productoSchema = new mongoose.Schema({
   id: Number,
   nombre: String,
