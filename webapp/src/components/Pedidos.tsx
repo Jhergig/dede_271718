@@ -16,7 +16,6 @@ function Pedidos(): JSX.Element {
 
   const inicializarPedidos = async () => {
     setPedidos(await getPedidos(getDefaultSession().info.webId));
-    console.log(pedidos)
   }
 
   useEffect(() => {

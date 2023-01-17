@@ -25,7 +25,7 @@ function App(): JSX.Element {
         <Route path='/logout' element={<Logout nombre={setNombre} />} />
         <Route path='/direcciones' element={<Direcciones />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
-        <Route path="/comprar/:id" element={<Compra/>} />
+        <Route path="/comprar/:id" element={<Compra nombre={nombre}/>} />
         <Route path='/cesta' element={<Cesta />} />
         <Route path='/pedidos' element={<Pedidos />} />
       </Routes>

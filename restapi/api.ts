@@ -118,6 +118,7 @@ async (req: Request, res: Response): Promise<Response> => {
   let envio = req.body.envio;
   let estado = req.body.estado;
   new Pedido({webid, idProducto, nombreProducto, cantidad, precio, almacen, envio, estado}).save();
+  await Almacen.update({idProducto:idProducto, almacen:almacen}, {$inc:{cantidad: -cantidad}})
   return res.sendStatus(200);
 })
 
