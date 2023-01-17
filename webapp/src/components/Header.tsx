@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
-import { isLoggedIn, getName } from '../api/solidSession';
+import { isLoggedIn } from '../api/solidSession';
 
 function Header(props: { webId: string }): JSX.Element {
 
