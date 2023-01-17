@@ -1,6 +1,6 @@
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
-import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
+import { isLoggedIn } from '../api/solidSession';
 
 function Header(props: { nombre: string }): JSX.Element {
 
@@ -8,7 +8,7 @@ function Header(props: { nombre: string }): JSX.Element {
     <header>
       <h1><img src={logo} className="App-logo" alt="logo" width="60px" />DeDe</h1>
       {
-        getDefaultSession().info.isLoggedIn
+        isLoggedIn()
           ? (
             <nav>
               <Link to="/">Catálogo</Link>

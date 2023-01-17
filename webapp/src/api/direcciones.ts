@@ -1,5 +1,4 @@
 import { Direccion} from '../shared/shareddtypes';
-import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import {
   getSolidDataset,
   getThing,
@@ -8,9 +7,10 @@ import {
   Thing,
 } from "@inrupt/solid-client";
 import { VCARD } from "@inrupt/vocab-common-rdf";
+import { getWebId } from './solidSession';
 
 export const obtenerDirecciones = async () => {
-  let webId = getDefaultSession().info.webId!;
+  let webId = getWebId()!;
   let profileDocumentURI = webId.split("#")[0];
   let myDataset = await getSolidDataset(profileDocumentURI);
   let direccionespod = getUrlAll(getThing(myDataset, webId) as Thing, VCARD.hasAddress);

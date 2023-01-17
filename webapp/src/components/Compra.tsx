@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Producto, Almacen, Direccion } from '../shared/shareddtypes';
 import { Box, Button, InputLabel, Select, MenuItem, SelectChangeEvent, TextField, Checkbox } from '@mui/material';
-import { getDefaultSession } from "@inrupt/solid-client-authn-browser";
 import { getProducto, getAlmacenes, addPedido } from '../api/api';
 import { obtenerDirecciones } from '../api/direcciones';
+import { getWebId, isLoggedIn } from '../api/solidSession';
 
 function Compra(props: { nombre: string }): JSX.Element {
 
-  if (!getDefaultSession().info.isLoggedIn) {
+  if (!isLoggedIn()) {
     document.location.href = "/login";
   }
 
@@ -146,7 +146,7 @@ function Compra(props: { nombre: string }): JSX.Element {
 
   let navigate = useNavigate();
   const realizarCompra = async () => {
-    await addPedido({ webid: getDefaultSession().info.webId, idProducto: producto.id, nombreProducto: producto.nombre, cantidad: cantidad, precio: coste, almacen: almacen, envio: gastosEnvio, estado: 'En reparto' })
+    await addPedido({ webid: getWebId(), idProducto: producto.id, nombreProducto: producto.nombre, cantidad: cantidad, precio: coste, almacen: almacen, envio: gastosEnvio, estado: 'En reparto' })
 
     console.log("Datos para transportista - Nombre: " + props.nombre + " - Dirección: " + direcciones[direccion].ciudad + ", " + direcciones[direccion].cp + ", " + direcciones[direccion].calle + " - Horario: " + (horarioEnvio ? "de " + inicioHorario + " a " + finalHorario : "flexible"));
     console.log("Datos para la pasarela de pago - Nombre: " + props.nombre + " - Total: " + (Number(coste) + Number(gastosEnvio)))

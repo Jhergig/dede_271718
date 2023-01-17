@@ -1,20 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Pedido } from '../shared/shareddtypes';
 import { Box, Button } from '@mui/material';
-import { getDefaultSession } from '@inrupt/solid-client-authn-browser';
 import { getPedidos } from '../api/api';
 import { Link } from 'react-router-dom';
+import { getWebId, isLoggedIn } from '../api/solidSession';
 
 function Pedidos(): JSX.Element {
 
-  if (!getDefaultSession().info.isLoggedIn) {
+  if (isLoggedIn()) {
     document.location.href = "/login";
   }
 
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
 
   const inicializarPedidos = async () => {
-    setPedidos(await getPedidos(getDefaultSession().info.webId));
+    setPedidos(await getPedidos(getWebId()));
   }
 
   useEffect(() => {
