@@ -77,7 +77,7 @@ describe('order', () => {
     */
     it('can be created', async () => {
         const response: Response = await request(app).post("/api/pedidos/add").send({ webid: "uo271718-dedeuser1", idProduct: "1",
-    nombreProducto:"PS5", cantidad:"2", precio:"800", almacen:"Asturias", envio:"2", estado:"En reparto"});
+    nombreProducto:"Playstation 5", cantidad:"2", precio:"800", almacen:"asturias", envio:"2", estado:"En reparto"});
         expect(response.statusCode).toBe(200);
     });
 });
