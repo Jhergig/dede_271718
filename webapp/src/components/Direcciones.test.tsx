@@ -22,7 +22,7 @@ test("Direcciones renders correctly", async () => {
     await act(async () => {
         const { getByText } = render(<BrowserRouter><Direcciones webId="prueba"/></BrowserRouter>);
 
-        expect(getByText("Mis direcciones")).toBeInTheDocument();
+        expect(getByText("Añadir nueva dirección")).toBeInTheDocument();
     });
 
 });
