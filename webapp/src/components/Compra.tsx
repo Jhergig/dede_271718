@@ -43,7 +43,7 @@ function Compra(props: { nombre: string }): JSX.Element {
       if (Number(inicioHorario.split(':')[0]) >= Number(finalHorario.split(':')[0])) {
         return true;
       }
-      if (Number(finalHorario.split(':')[0]) - Number(inicioHorario.split(':')[0]) == 1 && Number(inicioHorario.split(':')[1]) > Number(finalHorario.split(':')[1])) {
+      if (Number(finalHorario.split(':')[0]) - Number(inicioHorario.split(':')[0]) === 1 && Number(inicioHorario.split(':')[1]) > Number(finalHorario.split(':')[1])) {
         return true;
       }
     }
