@@ -1,13 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Box, Button, InputLabel, Select, MenuItem, SelectChangeEvent } from '@mui/material';
 import { login, handleIncomingRedirect, getDefaultSession } from "@inrupt/solid-client-authn-browser";
-import {
-    getSolidDataset,
-    getThing,
-    getStringNoLocale,
-    Thing,
-} from "@inrupt/solid-client";
-import { FOAF } from "@inrupt/vocab-common-rdf";
 
 function Login(props: any): JSX.Element {
 
@@ -31,13 +24,7 @@ function Login(props: any): JSX.Element {
                 clientName: "DeDe"
             });
         }
-        props.nombre(getStringNoLocale(await getProfile(getDefaultSession().info.webId!), FOAF.name))
-    }
-
-    const getProfile = async (webId: string) => {
-        let profileDocumentURI = webId.split("#")[0]; 
-        let myDataset = await getSolidDataset(profileDocumentURI); 
-        return getThing(myDataset, webId) as Thing; 
+        props.setWebId(getDefaultSession().info.webId)
     }
 
     return (

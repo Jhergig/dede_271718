@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 function Logout(props: any): JSX.Element {
 
     const cerrarSesion = () => {
-        props.nombre('');
+        props.setWebId('');
         document.location.href = "/";
     };
 

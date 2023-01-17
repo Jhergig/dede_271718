@@ -3,12 +3,12 @@ import { Box, Button, InputLabel, TextField } from '@mui/material';
 import { Direccion } from '../shared/shareddtypes';
 import { obtenerDirecciones } from '../api/direcciones';
 
-function Direcciones(): JSX.Element {
+function Direcciones(props: {webId: string}): JSX.Element {
 
   const [direcciones, setDirecciones] = useState<Direccion[]>([]);
 
   const inicializarDirecciones = async () => {
-    setDirecciones(await obtenerDirecciones());
+    setDirecciones(await obtenerDirecciones(props.webId));
   }
 
   useEffect(() => {

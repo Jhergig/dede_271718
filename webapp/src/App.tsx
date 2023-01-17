@@ -14,22 +14,22 @@ import Compra from './components/Compra';
 
 function App(): JSX.Element {
 
-  const [nombre, setNombre] = useState('');
+  const [webId, setWebId] = useState('');
 
   return (
     <>
-      <Header nombre={nombre}/>
+      <Header webId={webId} />
       <Routes>
         <Route path="/" element={<Catalogo />} />
-        <Route path='/login' element={<Login nombre={setNombre}/>} />
-        <Route path='/logout' element={<Logout nombre={setNombre} />} />
-        <Route path='/direcciones' element={<Direcciones />} />
+        <Route path='/login' element={<Login setWebId={setWebId} />} />
+        <Route path='/logout' element={<Logout setWebId={setWebId} />} />
+        <Route path='/direcciones' element={<Direcciones webId={webId} />} />
         <Route path="/producto/:id" element={<DetalleProducto />} />
-        <Route path="/comprar/:id" element={<Compra nombre={nombre}/>} />
+        <Route path="/comprar/:id" element={<Compra webId={webId} />} />
         <Route path='/cesta' element={<Cesta />} />
-        <Route path='/pedidos' element={<Pedidos />} />
+        <Route path='/pedidos' element={<Pedidos webId={webId} />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   );
 }
