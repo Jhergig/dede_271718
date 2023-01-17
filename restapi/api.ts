@@ -5,15 +5,6 @@ const api:Router = express.Router()
 
 const mongoose = require("mongoose");
 
-interface User {
-    name: string;
-    email: string;
-}
-
-//This is not a restapi as it mantains state but it is here for
-//simplicity. A database should be used instead.
-let users: Array<User> = [];
-
 const productoSchema = new mongoose.Schema({
   id: Number,
   nombre: String,
@@ -44,27 +35,6 @@ const almacenSchema = new mongoose.Schema({
 })
 
 const Almacen = mongoose.model("almacenes", almacenSchema);
-
-api.get(
-    "/users/list",
-    async (req: Request, res: Response): Promise<Response> => {
-        return res.status(200).send(users);
-    }
-);
-
-api.post(
-  "/users/add",[
-    check('name').isLength({ min: 1 }).trim().escape(),
-    check('email').isEmail().normalizeEmail(),
-  ],
-  async (req: Request, res: Response): Promise<Response> => {
-    let name = req.body.name;
-    let email = req.body.email;
-    let user: User = {name:name,email:email}
-    users.push(user);
-    return res.sendStatus(200);
-  }
-);
 
 api.get("/productos",
   async (req: Request, res: Response): Promise<Response> => { 
@@ -108,7 +78,6 @@ api.post("/pedidos/add", [
   check('webid').isLength({ min: 1 }).trim().escape(),
 ],
 async (req: Request, res: Response): Promise<Response> => {
-  console.log(req.body.webid)
   let webid = req.body.webid.toString().substring(18).split('.')[0]+req.body.webid.toString().substring(18).split('.')[1];
   let idProducto = req.body.idProducto;
   let nombreProducto = req.body.nombreProducto;

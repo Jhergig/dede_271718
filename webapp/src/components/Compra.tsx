@@ -28,10 +28,10 @@ function Compra(props: { nombre: string }): JSX.Element {
   const [inicioHorario, setInicioHorario] = useState("");
   const [finalHorario, setFinalHorario] = useState("");
 
-  // Rango de peso  1   2   3
-  const MapaDePrecios = [[0, 2, 5],     // Misma zona
-  [5, 8, 15],     // Distintas zonas peninsulares
-  [20, 25, 30]];    // Envio desde/a canarias y baleares
+        // Rangos de peso  1   2   3
+  const MapaDePrecios = [[ 0,  2,  5],     // Misma zona
+                         [ 5,  8, 15],     // Distintas zonas peninsulares
+                         [20, 25, 30]];    // Envio desde/a canarias y baleares
 
   const ZonaNordeste = ['48', '20', '31', '22', '25', '08', '17', '01', '26', '50', '43', '42']
   const ZonaNoroeste = ['15', '27', '33', '39', '36', '32', '24', '34', '09', '49', '47']
