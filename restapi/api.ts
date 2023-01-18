@@ -87,7 +87,7 @@ async (req: Request, res: Response): Promise<Response> => {
   let envio = req.body.envio;
   let estado = req.body.estado;
   new Pedido({webid, idProducto, nombreProducto, cantidad, precio, almacen, envio, estado}).save();
-  await Almacen.updateOne({idProducto:idProducto, almacen:almacen.toString()}, {$inc:{cantidad: -cantidad}})
+  await Almacen.updateOne({idProducto:Number(idProducto), almacen:almacen.toString()}, {$inc:{cantidad: -Number(cantidad)}})
   return res.sendStatus(200);
 })
 
