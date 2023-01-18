@@ -19,6 +19,11 @@ jobs:
         node-version: 16
     - run: npm ci
     - run: npm test
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - uses: codecov/codecov-action@v2
   unit-test-restapi:
     runs-on: ubuntu-latest
@@ -32,6 +37,11 @@ jobs:
         node-version: 16
     - run: npm ci
     - run: npm test
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      env: 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
     - uses: codecov/codecov-action@v2
   e2e-tests:
     needs: [unit-test-webapp, unit-test-restapi]
@@ -45,19 +55,6 @@ jobs:
     - run: npm --prefix restapi install
     - run: npm --prefix webapp run build
     - run: npm --prefix webapp run test:e2e
-  sonarcloud:
-    name: SonarCloud
-    runs-on: ubuntu-latest
-    needs: [e2e-tests]
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   docker-push-webapp:
     name: Push webapp Docker Image to GitHub Packages
     runs-on: ubuntu-latest
