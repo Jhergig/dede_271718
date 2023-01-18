@@ -42,9 +42,14 @@ function Catalogo(): JSX.Element {
       {
         productos?.length > 0
           ? (
-            <div className='grid'>
+            <Box sx={{
+              display: 'flex',
+              margin: '3em',
+              flexWrap: 'wrap',
+              justifyContent: 'space-around'
+            }}>
               {productos.map((p:Producto) => <ProductoCard producto={p}/>)}
-            </div>
+            </Box>
           ) : (
             <p>No se encontraron productos</p>
           )

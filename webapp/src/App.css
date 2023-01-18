@@ -66,13 +66,6 @@ main {
   align-items: center;
 }
 
-.grid {
-  display: flex;
-  margin: 3em;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
 a[href^='/producto/']{
   color: black;
 }
