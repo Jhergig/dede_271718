@@ -79,15 +79,15 @@ api.post("/pedidos/add", [
 ],
 async (req: Request, res: Response): Promise<Response> => {
   let webid = req.body.webid.toString().substring(18).split('.')[0]+req.body.webid.toString().substring(18).split('.')[1];
-  let idProducto = req.body.idProducto;
+  let idProducto:number = req.body.idProducto;
   let nombreProducto = req.body.nombreProducto;
-  let cantidad = req.body.cantidad;
+  let cantidad:number = req.body.cantidad;
   let precio = req.body.precio;
   let almacen = req.body.almacen;
   let envio = req.body.envio;
   let estado = req.body.estado;
   new Pedido({webid, idProducto, nombreProducto, cantidad, precio, almacen, envio, estado}).save();
-  await Almacen.updateOne({idProducto:idProducto, almacen:almacen}, {$inc:{cantidad: -cantidad}})
+  await Almacen.updateOne({idProducto:idProducto, almacen:almacen.toString()}, {$inc:{cantidad: -cantidad}})
   return res.sendStatus(200);
 })
 
