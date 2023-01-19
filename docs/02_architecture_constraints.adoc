@@ -2,32 +2,26 @@
 == Architecture Constraints
 
 === Restricciones organizativas
-[role="arc42help"]
-****
 [options="header",cols="1,2"]
 |===
 |Restricción|Explicación
 | Equipo individual | Este proyecto debe realizarse de manera individual.
-| Fecha límite | La defensa del proyecto se llevará a cabo el jueves 19 de enero de 2023, por lo que este debería estar finalizado para el lunes 16, tres días antes.
+| Fecha límite | La defensa del proyecto se llevará a cabo el jueves 19 de enero de 2023.
 | Dedicación temporal | Se deben emplear entre 75 y 100 horas al proyecto por cada integrante del equipo de desarrollo.
 | Documentación de la arquitectura | La documentación sigue la estructura propuesta por la plantilla Arc42.
 | GitHub | El proyecto debe realizarse en un repositorio público de GitHub.
 | Testing | Se requieren pruebas unitarias, pruebas de aceptación, pruebas de carga y un mínimo del 50% de cobertura de código. Incluir apartado 13 en el documento con los resultados.
 |===
 
-****
 
 === Restricciones técnicas
-[role="arc42help"]
-****
 [options="header",cols="1,2"]
 |===
 |Restricción|Explicación
 | React | La aplicación será implementada utilizando el framework React.
 | Typescript | La aplicación será implementada utilizando el lenguaje Typescript.
-| SOLID | El sistema seguirá los principios SOLID.
+| Solid | El sistema seguirá la especificación de Solid.
 | Despliegue e integración continua | La aplicación debería ser accesible y estar desplegada en la nube utilizando un sistema de integración continua.
 | Docker | La aplicación debería ser desplegable localmente como docker-compose.
 |===
 
-****

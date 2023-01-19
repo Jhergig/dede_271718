@@ -2,15 +2,13 @@
 == Risks and Technical Debts
 
 === Risks
-[role="arc42help"]
-****
 * Muchas de las tecnologías empleadas en el proyecto son nuevas para el equipo de desarrollo. 
 * Ninguno de los integrantes del equipo de desarrollo es experto en desarrollar interfaces visualmente bonitas.
 * Existe una fecha límite para el proyecto.
-****
 === Technical Debts
-****
-* Falta implementar una paginación para el catálogo de productos y la vista de pedidos.
+* Requisito funcional: carrito no implementado
+* Mejorar usabilidad implementando paginación para el catálogo de productos y la vista de pedidos.
+* Mejorar usabilidad con mensajes al usuario (campos incorrectos al intentar comprar, confirmación de que una acción se realiza, etc.).
 * La restapi no cuenta con elementos de seguridad actualmente (autentificación y autorización).
-* Al recargar la página no se mantiene iniciada la sesión.
-****
+* Comprobar que se cumplen las reglas de negocio en webapp/src/api y en la restapi.
+* Testing más exhaustivo.

@@ -1,14 +1,16 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
-
-[role="arc42help"]
-****
-A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
+Resumen de estrategias y decisiones fundamentales:
 
 * Se ha decidido elaborar la documentación en español. El motivo principal es agilizar su elaboración y así poder emplear recursos en otros apartados del proyecto. Es un aspecto que puede ser (y será) cambiado fácilmente.
 * El proyecto parte de la plantilla dede_0.
 * La base de datos será MongoDB. Se trata de una base de datos NoSQL orientada a documentos popular para equipos de desarrollo en metodologías ágiles. Algunas de sus ventajas son su rendimiento y consultas bastante avanzadas para ser una base de datos NoSQL, permitir una escabilidad vertical y horizontal acorde a la demanda de la aplicación y que el equipo de desarrollo tiene algo de experiencia con esta tecnología.
 * En un principio se pensó en obtener las direcciones del usuario en el login y almacenarlas en memoria para acceder a ellas cuando fueran necesarias. Sin embargo, como las direcciones dependen de un sistema externo, debemos obtenerlas de este siempre que las necesitemos. Si no, no se verían reflejados en la sesión del usuario cambios realizados fuera de la aplicación.
 * No se consultarán APIs externas de portadores. Las que se han investigado requerían contactar con la plataforma como posibles clientes (y no los vamos a molestar para hacer esta demo). 
-****
+* Para crear interfaces nos apoyaremos en la librería Material UI, que nos permite crear componentes de interfaz estéticos con un esfuerzo mínimo.
+* Para conectar con MongoDB usaremos la librería mongoose, creando schemas para nuestros datos, la conexión y las consultas.
+* No habrá ni siquiera tabla de usuarios en nuestra base de datos, no se almacenarán ni direcciones ni nigún otro dato que no sea el webId asociado a un pedido. Al realizar una compra, los datos como el nombre y la dirección del usuario se mandarán directamente a los servicios de transporte y de pago sin pasar por nuestra base de datos.
+* Para la comunicación con el pod del usuario usamos las librerías @inrupt/solid-client y @inrupt/solid-client-authn-browser, que están bien documentadas y permiten el acceso autorizado a los pods. El usuario podrá iniciar sesión con los proveedores de pod solidcommunity e inrupt.
+* Integración continua, consistiendo en realización de pruebas unitarias de la restapi y webapp, análisis estático de sonarcloud, pruebas de aceptación y creación de contenedores Docker y publicación como paquetes en GitHub
+* Despliegue manual en azure. Se investigaron Github actions (como "Deploy a containes to an Azure Web App") para tener un sistema de CI/CD, pero se determinó que no era necesario y que no merecía la pena invertir los recursos necesarios para ello.

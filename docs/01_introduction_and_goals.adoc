@@ -1,47 +1,36 @@
 [[section-introduction-and-goals]]
 == Introduction and Goals
 
-[role="arc42help"]
-****
-DeDe es un sistema de compra online cuya principal característica es la descentralización de los datos de sus clientes siguiendo los principios SOLID.
-****
+DeDe es un sistema de compra online cuya principal característica es la descentralización de los datos de sus clientes siguiendo la especificación de Solid.
 
 === Requirements Overview
 
-[role="arc42help"]
-****
 Los principales requisitos funcionales del sistema son:
 
 * Un usuario puede iniciar sesión a través de un proveedor de PODs. Es en estos pods donde DeDe consultará los datos del usuario, sin almacenarlos en el sistema, respetando así su privacidad.
 * Un catálogo con los productos a la venta, visible para todos los usuarios y con la posibilidad de realizar una búsqueda. Cada producto muestra su nombre, precio y la opción para ver más detalles, comprarlo o añadirlo a la cesta. 
 * Un usuario que haya iniciado sesión puede proceder a la compra de un producto o añadirlo a su cesta, visualizar los productos de su cesta, seleccionar productos de su cesta para proceder a su compra y visualizar sus pedidos realizados.
-* Un usuario que haya iniciado sesión puede gestionar sus direcciones (almacenadas en su pod), pudiendo añadir y editarlas desde la propia aplicación.
+* Un usuario que haya iniciado sesión puede gestionar sus direcciones (almacenadas en su pod), pudiendo añadir y borrarlas desde la propia aplicación.
 * En el proceso de compra, el usuario seleccionará una dirección de envío de su pod, podrá opcionalmente especificar un rango horario para realizar la entrega (con un coste adicional), y verá el coste del pedido, con el precio del producto o productos y los gastos de envío, que se calculan en función de la distancia entre la dirección y almacén seleccionados.
 ** En el caso de la compra de un producto, se puede seleccionar el almacén desde el que será enviado y la cantidad.
 ** En el caso de la compra de un conjunto de productos de la cesta, se visualizará la lista de productos con su cantidad y almacén seleccionados, junto a una opción para editar estos de una manera similar a cuando se realiza la compra de un producto por separado.
-****
 
 === Quality Goals
 
-[role="arc42help"]
-****
 [options="header",cols="1,2,2"]
 |===
 |N.|Atributo de calidad|Objetivo, motivaciones
-| 1 | Privacidad | El sistema no almacenará información personal de los clientes, respetando su privacidad siguiendo los principios SOLID.
-| 2 | Usabilidad | Todo tipo de usuario debería ser capaz de utilizar la aplicación de forma intuitiva, sin ningún conocimiento o experiencia previa en esta. 
+| 1 | Privacidad | El sistema no almacenará información personal de los clientes, respetando su privacidad siguiendo los principios Solid.
+| 2 | Usabilidad | Todo tipo de usuario debería ser capaz de utilizar la aplicación ágilmente de forma intuitiva, sin ningún conocimiento o experiencia previa en esta. 
 | 3 | Rendimiento | El sistema debe responder de forma eficaz y rápida, creando la ilusión de que no se trata de una aplicación web sino una de escritorio.
 | 4 | Adaptabilidad | Es importante que la aplicación se visualice correctamente y de forma satisfactoria en dispositivos móviles.
 | 5 | Elegancia | Se debe cuidar la estética visual de la aplicación.
 | 6 | Seguridad | La aplicación debe ser robusta y almacenar los datos de manera segura.
 | 7 | Mantenibilidad | Esencial que el se construya desde un principio de una manera  mantenible que permita realizar cambios y añadir nuevas funcionalidades en un futuro.
 |===
-****
 
 === Stakeholders
 
-[role="arc42help"]
-****
 [options="header",cols="1,2"]
 |===
 |Stakeholder|Expectativas, motivaciones
@@ -49,4 +38,3 @@ Los principales requisitos funcionales del sistema son:
 | Profesores | Son los encargados de evaluar el proyecto y el sistema final. También actúan como el supuesto cliente (empresa de venta de productos).
 | Usuario | Los usuarios finales, los que usarán la aplicación para realizar compras.
 |===
-****

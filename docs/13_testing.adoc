@@ -1,29 +1,29 @@
 == Testing
 
+El testing en este proyecto ha ido enfocado más a aprender las tecnologías implicadas (librerías, integración continua, etc.) que a probar la aplicación. Esto se debe también a que hay otras asignaturas que se dedican al testeo,  como Calidad, Validación y Verificación del Software.
+
 === Pruebas unitarias
-
-[role="arc42help"]
-****
-Pruebas unitarias
-****
-
-=== Pruebas de aceptación
-
-[role="arc42help"]
-****
-Pruebas de aceptación
-****
+Para la creación de test unitarios se han usado las librerías Jest y, en el caso de la webapp, React Testing Library. En la webapp, se prueba el correcto funcionamiento y renderizado de cada componente individual, las funciones que llaman a datos de los pod o la bd han sido mockerizadas con funciones que devuelven datos preparados. En la restapi se comprueba que cada función se ejecute correctamente y devuelva la respuesta esperada.
 
 === Cobertura de código
+image:13_testing.png["Cobertura de código"]
 
-[role="arc42help"]
+Se ha alcanzado el mínimo propuesto del 50% de cobertura de código, 53% en la webapp y 71% en la restapi concretamente, aunque lo ideal sería estar por encima de un 80%.
+
+=== Pruebas de aceptación
+Para la creación de test de aceptación se han usado las librerías Jest y Cucumber. Cucumber permite realizar los tests con la sintaxis de historias de usuario Given, When, Then. Un ejemplo de prueba de aceptación sería:
+
 ****
-Cobertura de código
+Feature: User viewing product details
+
+Scenario: The user view the details of a product
+
+  Given An user in the home page
+  When The user clicks on a product
+  Then The product details page should be shown
 ****
 
 === Pruebas de carga
+Realizado con la herramienta Gatling, la cual permite grabar acciones realizadas en la aplicación con un proxy, para después reproducirlas en mayor cantidad, poniendo a prueba la carga de trabajo que soporta nuestra aplicación.
 
-[role="arc42help"]
-****
-Pruebas de carga
-****
+Se ha probado con 25 usuarios por segundo durante un minuto. El tiempo medio de las respuestas han estado por debajo de los 1,5 segundos.

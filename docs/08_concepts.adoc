@@ -1,67 +1,31 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
-
-[role="arc42help"]
-****
-.Content
-This section describes overall, principal regulations and solution ideas that are
-relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks.
-They can include many different topics, such as
-
-* domain models
-* architecture patterns or design patterns
-* rules for using specific technology
-* principal, often technical decisions of overall decisions
-* implementation rules
-
-.Motivation
-Concepts form the basis for _conceptual integrity_ (consistency, homogeneity)
-of the architecture. Thus, they are an important contribution to achieve inner qualities of your system.
-
-Some of these concepts cannot be assigned to individual building blocks
-(e.g. security or safety). This is the place in the template that we provided for a
-cohesive specification of such concepts.
-
-.Form
-The form can be varied:
-
-* concept papers with any kind of structure
-* cross-cutting model excerpts or scenarios using notations of the architecture views
-* sample implementations, especially for technical concepts
-* reference to typical usage of standard frameworks (e.g. using Hibernate for object/relational mapping)
-
-.Structure
-A potential (but not mandatory) structure for this section could be:
-
-* Domain concepts
-* User Experience concepts (UX)
-* Safety and security concepts
-* Architecture and design patterns
-* "Under-the-hood"
-* development concepts
-* operational concepts
-
-Note: it might be difficult to assign individual concepts to one specific topic
-on this list.
-
-image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscutting concepts"]
-****
-
-
 === Domain model
 
-image:UmlDiagram.png["Example UML Diagram"]
+image:08_concepts_1.png["Modelo de dominio"]
+
+Nótese que el usuario y las direcciones no se transforman en tablas de nuestra base de datos. El "precio" en un pedido es el resultado de multiplicar el precio del producto por la cantidad, es necesario almacenarlo junto con el pedido ya que el precio de este es inmutable mientras que el del producto puede cambiar con el tiempo.
+
+=== Cálculo de gastos de envío
+
+Para los gastos de envío se tiene en cuenta tanto el peso del producto como la distancia entre el almancén desde el que se manda y la dirección de envío del usuario.
+
+Para el peso, se consideran tres rangos: menor de 5kg, entre 5kg y menor de 20kg, y 20kg o más.
+
+Para la distancia, se ha dividido el territorio de España en zonas, con las cuales se consideran tres tipos de envío:
+
+* Tipo 1: envío a la misma zona
+* Tipo 2: envío desde zona peninsular hasta otra zona peninsular
+* Tipo 3: envío desde/a zona de canarias o baleares
 
 
+[cols="1,1,1,1"]
+|===
+|Distancia\Peso| <5kg | >=5kg y < 20kg | >= 20kg
+|Tipo 1| 0€ | 2€ | 5€
+|Tipo 2| 5€ | 8€ | 15€
+|Tipo 3| 20€ | 25€ | 30€
+|===
 
-=== _<Concept 2>_
-
-_<explanation>_
-
-...
-
-=== _<Concept n>_
-
-_<explanation>_
+image:08_concepts_2.png["Zonas"]

@@ -3,7 +3,7 @@
 //
 // ====================================
 
-= image:LogoDeDe.png[arc42] DeDe_271718
+= image:logoDeDe.png[arc42] DeDe_271718
 // toc-title definition MUST follow document title without blank line!
 :toc: left
 :toc-title: Table of Contents

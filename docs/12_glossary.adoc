@@ -1,13 +1,21 @@
 [[section-glossary]]
 == Glossary
-
+****
 [options="header", cols="1,2"]
 |===
 | Término | Definición
 | TypeScript | Lenguaje de programación libre y de código abierto, siendo un superconjunto de JavaScript que añade tipado y objetos basados en clases, desarrollado por Microsoft
 | React | Biblioteca Javascript de código abierto diseñada para crear interfaces, desarrollado por Facebook
+| Node.js | Entorno de servidor de código abierto multiplataforma, ejecución de JavaScript de back-end
+| Express.js | Framework de código abierto para desarrollar aplicaciones web con Node.js
 | Solid | Especificación que permite a los usuarios almacenar sus datos de forma segura en Pods
 | Pods | Servidores web de datos personales, seguros y descentralizados. El usuario del Pod controla que personas y aplicaciones pueden acceder a sus datos
 | MongoDB | Sistema de base de datos NoSQL, orientado a documentos y de código abierto
 | Docker | Proyecto de código abierto, automatiza el despliegue de aplicaciones dentro de contenedores software, una capa de virtualización de aplicaciones directamente sobre el sistema operativo
+| Azure | Plataforma informática en la nube operada por Microsoft.
+| CI, Integración continua | Práctica de la ingeniería de software que consisite en automatizar el proceso de integración de un proyecto para llevarlo a cabo lo más a menudo posible y asi detectar fallos cuanto antes
+| CD, Despliegue continuo | Extensión de la CI, que ademas despliega el proyecto en producción con los cambios realizados
+| Pruebas unitarias | Prueba del correcto funcionamiento de los componentes más pequeños del sistema
+| Pruebas de aceptación | Prueba del sistema con escenarios para asegurar calidad del software (que se cumplan las necesidades y requerimientos que tenía que proporcionar el sistema)
 |===
+****

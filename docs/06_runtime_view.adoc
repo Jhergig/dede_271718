@@ -1,57 +1,47 @@
 [[section-runtime-view]]
 == Runtime View
 
+=== Escenario 1
 
-[role="arc42help"]
-****
-.Contents
-The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:
-
-* important use cases or features: how do building blocks execute them?
-* interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?
-* operation and administration: launch, start-up, stop
-* error and exception scenarios
-
-Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their *architectural relevance*. It is *not* important to describe a large number of scenarios. You should rather document a representative selection.
-
-.Motivation
-You should understand how (instances of) building blocks of your system perform their job and communicate at runtime.
-You will mainly capture scenarios in your documentation to communicate your architecture to stakeholders that are less willing or able to read and understand the static models (building block view, deployment view).
-
-.Form
-There are many notations for describing scenarios, e.g.
-
-* numbered list of steps (in natural language)
-* activity diagrams or flow charts
-* sequence diagrams
-* BPMN or EPCs (event process chains)
-* state machines
-* ...
-
-****
-
-=== <Runtime Scenario 1>
-
-
-* _<insert runtime diagram or textual description of the scenario>_
-* _<insert description of the notable aspects of the interactions between the
-building block instances depicted in this diagram.>_
-
-It is possible to use a sequence diagram:
+Usuario no identificado visita la tienda y accede a los detalles de un producto
 
 [plantuml,"Sequence diagram",png]
 ----
-actor Alice
-actor Bob
-database Pod as "Bob's Pod"
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-Alice  --> Pod: Store route
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+actor User
+participant DeDe
+database DB
+User -> DeDe: Accede a la vista Catálogo
+DeDe -> DB: Solicita la lista de productos
+DeDe <- DB: Devuelve la lista de productos
+User <- DeDe: Se muestra el Catálogo
+User -> DeDe: Selecciona ver los detalles de un producto
+DeDe -> DB: Solicita el producto seleccionado
+DeDe <- DB: Devuelve el producto solicitado
+User <- DeDe: Se muestra la vista de los detalles del producto
 ----
-=== <Runtime Scenario 2>
+=== Escenario 2
 
-=== ...
+Usuario no identificado en el login inicia sesión, visita la página de compra de un producto y lo compra
 
-=== <Runtime Scenario n>
+[plantuml,"Sequence diagram 2",png]
+----
+actor User
+participant DeDe
+database Pod as "Pod del usuario"
+database DB
+User -> DeDe: Inicia sesión
+DeDe -> Pod: Delega el inicio de sesión
+DeDe <- Pod: Confirma el inicio de sesión
+User <- DeDe: Muestra la página para usuarios logeados
+User -> DeDe: Accede a la compra de un producto
+DeDe -> Pod: Solicita las direcciones del usuario
+DeDe <- Pod: Devuelve las direcciones del usuario
+DeDe -> DB: Solicita el producto
+DeDe <- DB: Devuelve el producto
+DeDe -> DB: Solicita los almacenes disponibles
+DeDe <- DB: Devuelve los almacenes disponibles
+User <- DeDe: Muestra la página de compra
+User -> DeDe: Compra el producto
+DeDe -> DB: Añadir el pedido
+DeDe <- DB: Confirmación
+----

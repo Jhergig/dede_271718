@@ -3,8 +3,6 @@
 
 === Business Context
 
-[role="arc42help"]
-****
 [options="header",cols="1,2"]
 |===
 |Agente|Explicación
@@ -14,8 +12,7 @@
 | RestAPI | Se encarga de la capa de persistencia, realiza consultas en la base de datos.
 | MongoDB | Base de datos NoSQL orientado a documentos donde se almacenarán los datos de la aplicación.
 |===
-****
 
-**Diagrama**
+**Diagrama del sistema**
 
-image:3_bussines_context_diagram.png["Diagrama del sistema"]
+image:03_bussines_context_diagram.png["Diagrama del sistema"]
